@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace NExceptionViewer.Core
+namespace GroupByTech.NExceptionViewer.Core
 {
     /// <summary>
     /// Viewmodel for one entry from DataArray
@@ -38,7 +38,7 @@ namespace NExceptionViewer.Core
         /// </summary>
         /// <param name="key">Key value from dictionary</param>
         /// <param name="value">Value for the key</param>
-        public DataEntryVM(object key, object? value)
+        public DataEntryVM(object key, object value)
         {
             Key = key?.ToString() ?? NOT_SET_STRING;
             Value = value?.ToString() ?? NOT_SET_STRING;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace NExceptionViewer.Core
+namespace GroupByTech.NExceptionViewer.Core
 {
     /// <summary>
     /// Exception viewmodel
@@ -32,25 +32,25 @@ namespace NExceptionViewer.Core
         public virtual string Source => exception.Source;
         public virtual string StackTrace => exception.StackTrace;
         public virtual string TargetSite => exception.TargetSite?.ToString();
-        
+
         public virtual IReadOnlyCollection<CustomPropertyEntryVM> CustomProperties { get; }
 
         public ExceptionVM(Exception exception)
         {
             this.exception = exception ?? throw new ArgumentNullException(nameof(exception));
             var dataEntries = new List<DataEntryVM>();
-            foreach(var key in exception.Data.Keys)
+            foreach (var key in exception.Data.Keys)
             {
                 dataEntries.Add(new DataEntryVM(key, exception.Data[key]));
             }
             CustomProperties = GetCustomProperties();
         }
-        
+
         protected virtual List<CustomPropertyEntryVM> GetCustomProperties()
         {
             var customPropInfos = new List<CustomPropertyEntryVM>();
             var allProperties = exception.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach(var propInfo in allProperties.Where(x => !excludedProps.Contains(x.Name)))
+            foreach (var propInfo in allProperties.Where(x => !excludedProps.Contains(x.Name)))
             {
                 var propVal = propInfo.GetValue(exception);
                 customPropInfos.Add(new CustomPropertyEntryVM(propInfo, propVal));

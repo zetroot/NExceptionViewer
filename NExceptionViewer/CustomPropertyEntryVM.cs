@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace NExceptionViewer.Core
+namespace GroupByTech.NExceptionViewer.Core
 {
     /// <summary>
     /// View model of custom property entry
