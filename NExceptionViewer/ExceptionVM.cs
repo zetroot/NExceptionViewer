@@ -43,6 +43,7 @@ namespace GroupByTech.NExceptionViewer.Core
             {
                 dataEntries.Add(new DataEntryVM(key, exception.Data[key]));
             }
+            DataEntries = dataEntries;
             CustomProperties = GetCustomProperties();
         }
 
