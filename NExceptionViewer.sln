@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionViewer.Core", "NExceptionViewer\GroupByTech.NExceptionViewer.Core.csproj", "{6DE821F9-F372-4E9E-9262-5481C44906E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionsViewer.Test.Core", "tests\GroupByTech.NExceptionsViewer.Test.Core\GroupByTech.NExceptionsViewer.Test.Core.csproj", "{DBE42C96-CF37-4829-BBC2-36820FFC440F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupByTech.NExceptionsViewer.Test.Core", "tests\GroupByTech.NExceptionsViewer.Test.Core\GroupByTech.NExceptionsViewer.Test.Core.csproj", "{DBE42C96-CF37-4829-BBC2-36820FFC440F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionViewer.Core", "src\GroupByTech.NExceptionViewer.Core\GroupByTech.NExceptionViewer.Core.csproj", "{C621B935-DA4A-4858-BB8A-28EB1165242E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionViewer.WPF", "src\GroupByTech.NExceptionViewer.WPF\GroupByTech.NExceptionViewer.WPF.csproj", "{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6DE821F9-F372-4E9E-9262-5481C44906E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6DE821F9-F372-4E9E-9262-5481C44906E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6DE821F9-F372-4E9E-9262-5481C44906E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6DE821F9-F372-4E9E-9262-5481C44906E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DBE42C96-CF37-4829-BBC2-36820FFC440F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DBE42C96-CF37-4829-BBC2-36820FFC440F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE42C96-CF37-4829-BBC2-36820FFC440F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE42C96-CF37-4829-BBC2-36820FFC440F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C621B935-DA4A-4858-BB8A-28EB1165242E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C621B935-DA4A-4858-BB8A-28EB1165242E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C621B935-DA4A-4858-BB8A-28EB1165242E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C621B935-DA4A-4858-BB8A-28EB1165242E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

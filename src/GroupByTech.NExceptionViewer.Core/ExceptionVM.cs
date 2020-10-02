@@ -23,19 +23,25 @@ namespace GroupByTech.NExceptionViewer.Core
         };
         protected readonly Exception exception;
 
+        /// <summary>
+        /// Collection of Data dictionary entries
+        /// </summary>
         public virtual IReadOnlyCollection<DataEntryVM> DataEntries { get; }
         public virtual string HelpLink => exception.HelpLink;
         public virtual int HResult => exception.HResult;
         public virtual string Message => exception.Message;
+        #region inner exception
         public virtual string InnerException => exception.InnerException?.ToString() ?? "(null)";
         public virtual bool HasInnerException => exception.InnerException != null;
+        public virtual ExceptionVM InnerExceptionVM => ExceptionVMFactory.CreateViewModel(exception.InnerException);
+        #endregion
         public virtual string Source => exception.Source;
         public virtual string StackTrace => exception.StackTrace;
         public virtual string TargetSite => exception.TargetSite?.ToString();
 
         public virtual IReadOnlyCollection<CustomPropertyEntryVM> CustomProperties { get; }
 
-        public ExceptionVM(Exception exception)
+        internal ExceptionVM(Exception exception)
         {
             this.exception = exception ?? throw new ArgumentNullException(nameof(exception));
             var dataEntries = new List<DataEntryVM>();
