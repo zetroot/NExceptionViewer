@@ -27,6 +27,7 @@ namespace GroupByTech.NExceptionViewer.Core
         /// Collection of Data dictionary entries
         /// </summary>
         public virtual IReadOnlyCollection<DataEntryVM> DataEntries { get; }
+        public virtual string ExceptionType => exception.GetType().Name;
         public virtual string HelpLink => exception.HelpLink;
         public virtual int HResult => exception.HResult;
         public virtual string Message => exception.Message;

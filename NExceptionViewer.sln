@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionViewe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GroupByTech.NExceptionViewer.WPF", "src\GroupByTech.NExceptionViewer.WPF\GroupByTech.NExceptionViewer.WPF.csproj", "{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupByTech.NExceptionViewer.WpfSample", "samples\GroupByTech.NExceptionViewer.WpfSample\GroupByTech.NExceptionViewer.WpfSample.csproj", "{C5A637EC-EFEE-4556-921E-4879C58C7338}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FDA44B0-3FAE-4BF8-A240-EE76F942CD9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A637EC-EFEE-4556-921E-4879C58C7338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A637EC-EFEE-4556-921E-4879C58C7338}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A637EC-EFEE-4556-921E-4879C58C7338}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A637EC-EFEE-4556-921E-4879C58C7338}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

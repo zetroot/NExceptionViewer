@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GroupByTech.NExceptionViewer.Core\GroupByTech.NExceptionViewer.Core.csproj" />
+    <ProjectReference Include="..\..\src\GroupByTech.NExceptionViewer.WPF\GroupByTech.NExceptionViewer.WPF.csproj" />
   </ItemGroup>
 
 </Project>
