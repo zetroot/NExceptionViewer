@@ -18,14 +18,14 @@ namespace GroupByTech.NExceptionViewer.WPF
     /// <summary>
     /// Interaction logic for ExceptionView.xaml
     /// </summary>
-    public partial class ExceptionViewControl : UserControl
+    public partial class AggregateExceptionView : Window
     {
-        protected ExceptionViewControl()
+        protected AggregateExceptionView()
         {
             InitializeComponent();
         }
 
-        internal ExceptionViewControl(ExceptionVM viewModel) : this()
+        internal AggregateExceptionView(AggregateExceptionVM viewModel) : this()
         {            
             DataContext = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
         }
@@ -38,10 +38,16 @@ namespace GroupByTech.NExceptionViewer.WPF
 
         private void OpenInnerException(object sender, RoutedEventArgs e)
         {
-            if(DataContext is ExceptionVM vm)
+            if (sender is FrameworkElement fe && fe.DataContext is ExceptionVM innerExceptionVm)
             {
-                _ = vm.InnerExceptionVM;
+                var dialog = ExceptionDialogFactory.CreateDialog(innerExceptionVm);
+                dialog.ShowDialog();
             }
+        }
+
+        private void OkButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }

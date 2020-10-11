@@ -1,4 +1,5 @@
 ﻿using GroupByTech.NExceptionViewer.Core;
+using GroupByTech.NExceptionViewer.WPF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,23 @@ namespace GroupByTech.NExceptionViewer.WpfSample
             }
             catch(Exception exc)
             {
-                var dialog = new DialogWin();
-                dialog.DataContext = ExceptionVMFactory.CreateViewModel(exc);
+                var dialog = ExceptionDialogFactory.CreateDialog(exc);                
+                dialog.ShowDialog();
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                var innerExc = new Exception("Sample exception", new Exception("inner exception"));
+                var aggregatedExc = new AggregateException(innerExc);                
+                throw aggregatedExc;
+            }
+            catch (Exception exc)
+            {
+                var dialog = ExceptionDialogFactory.CreateDialog(exc);
                 dialog.ShowDialog();
             }
         }

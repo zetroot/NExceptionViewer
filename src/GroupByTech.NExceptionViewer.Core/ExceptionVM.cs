@@ -27,6 +27,8 @@ namespace GroupByTech.NExceptionViewer.Core
         /// Collection of Data dictionary entries
         /// </summary>
         public virtual IReadOnlyCollection<DataEntryVM> DataEntries { get; }
+        public virtual bool HasDataEntries => DataEntries.Any();
+
         public virtual string ExceptionType => exception.GetType().Name;
         public virtual string HelpLink => exception.HelpLink;
         public virtual int HResult => exception.HResult;
@@ -41,6 +43,7 @@ namespace GroupByTech.NExceptionViewer.Core
         public virtual string TargetSite => exception.TargetSite?.ToString();
 
         public virtual IReadOnlyCollection<CustomPropertyEntryVM> CustomProperties { get; }
+        public virtual bool HasCustomProperties => CustomProperties.Any();
 
         internal ExceptionVM(Exception exception)
         {

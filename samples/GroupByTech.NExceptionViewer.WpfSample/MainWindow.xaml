@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
-        <Button Content="Syste.Exception" DockPanel.Dock="Top" Click="Button_Click"/>
+        <Button Content="System.Exception" DockPanel.Dock="Left" Click="Button_Click"/>
+        <Button Content="Aggregate.Exception" DockPanel.Dock="Right" Click="Button_Click_1"/>
     </DockPanel>
 </Window>

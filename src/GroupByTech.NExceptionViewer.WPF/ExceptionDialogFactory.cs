@@ -9,24 +9,17 @@ namespace GroupByTech.NExceptionViewer.WPF
 {
     public class ExceptionDialogFactory
     {
-        public static Window OpenDialog(Exception exception)
+        public static Window CreateDialog(Exception exception)
         {
             var viewmodel = ExceptionVMFactory.CreateViewModel(exception);
-            var dialogContents = viewmodel switch
-            {
-                AggregateExceptionVM aggregateExceptionVM => new AggregateExceptionViewControl(aggregateExceptionVM) as UserControl,
-                ExceptionVM exceptionVM => new ExceptionViewControl(exceptionVM) as UserControl,
-                _ => throw new NotSupportedException()
-            };
-
-            var dialogWindow = new Window
-            {
-                Content = dialogContents,
-                WindowStyle = WindowStyle.ToolWindow,
-                Topmost = true
-            };
-
-            return dialogWindow;
+            return CreateDialog(viewmodel);
         }
+
+        public static Window CreateDialog(ExceptionVM exceptionViewModel) => exceptionViewModel switch
+        {
+            AggregateExceptionVM aggregateExceptionVM => new AggregateExceptionView(aggregateExceptionVM) as Window,
+            ExceptionVM exceptionVM => new ExceptionView(exceptionVM) as Window,
+            _ => throw new NotSupportedException()
+        };
     }
 }
