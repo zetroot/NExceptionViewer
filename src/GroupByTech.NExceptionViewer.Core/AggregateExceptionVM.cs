@@ -15,6 +15,11 @@ namespace GroupByTech.NExceptionViewer.Core
         /// </summary>
         public IReadOnlyCollection<ExceptionVM> InnerExceptions { get; }
 
+        protected override List<CustomPropertyEntryVM> GetCustomProperties()
+        {
+            return base.GetCustomProperties().Where(x => x.Name != "InnerExceptions").ToList();
+        }
+
         internal AggregateExceptionVM(AggregateException exception) : base(exception)
         {
             InnerExceptions = exception.InnerExceptions.Select(x => ExceptionVMFactory.CreateViewModel(x)).ToList();

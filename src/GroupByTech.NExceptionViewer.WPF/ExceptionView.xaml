@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GroupByTech.NExceptionViewer.WPF"
              mc:Ignorable="d" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -68,7 +71,7 @@
                 </DockPanel>
             </Grid>
 
-            <GroupBox Grid.Row="1" Grid.Column="0" Header="Дополнительные поля">
+            <GroupBox Grid.Row="1" Grid.Column="0" Header="Дополнительные поля" Visibility="{Binding HasCustomProperties, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <ItemsControl ItemsSource="{Binding CustomProperties}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -81,7 +84,7 @@
                 </ItemsControl>
             </GroupBox>
 
-            <GroupBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Header="Словарь Data">
+            <GroupBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Header="Словарь Data" Visibility="{Binding HasDataEntries, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <DataGrid ItemsSource="{Binding DataEntries}" AutoGenerateColumns="False" CanUserReorderColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Ключ" Binding="{Binding Key, Mode=OneWay}" Width="1*"/>
