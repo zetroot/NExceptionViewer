@@ -6,9 +6,11 @@ namespace GroupByTech.NExceptionViewer.Core
 {
     public class ExceptionVMFactory
     {
-        public static ExceptionVM CreateViewModel(Exception e)
+        public static ExceptionVM CreateViewModel(Exception e) => e switch
         {
-            return new ExceptionVM(exception: e);
-        }
+            null => throw new ArgumentNullException(nameof(e)),
+            AggregateException aggregateException => new AggregateExceptionVM(aggregateException),
+            Exception exception => new ExceptionVM(exception)            
+        };
     }
 }

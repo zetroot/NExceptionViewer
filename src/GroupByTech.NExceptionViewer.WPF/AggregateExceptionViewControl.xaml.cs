@@ -18,14 +18,14 @@ namespace GroupByTech.NExceptionViewer.WPF
     /// <summary>
     /// Interaction logic for ExceptionView.xaml
     /// </summary>
-    public partial class ExceptionViewControl : UserControl
+    public partial class AggregateExceptionViewControl : UserControl
     {
-        protected ExceptionViewControl()
+        protected AggregateExceptionViewControl()
         {
             InitializeComponent();
         }
 
-        internal ExceptionViewControl(ExceptionVM viewModel) : this()
+        internal AggregateExceptionViewControl(AggregateExceptionVM viewModel) : this()
         {            
             DataContext = viewModel ?? throw new ArgumentNullException(nameof(viewModel));
         }
